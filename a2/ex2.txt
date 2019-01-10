@@ -1,0 +1,89 @@
+
+Karl Michel Koerich , 1631968
+Friday, March 16
+R. Vincent , instructor
+Assignment 2
+
+Exercise 2
+
+Hamming
+
+	Minimum number of moves = 20
+	Maximum size of the priority queue = 2389
+
+	Minimum number of moves = 18
+	Maximum size of the priority queue = 4492
+
+	Minimum number of moves = 16
+	Maximum size of the priority queue = 161
+
+	Minimum number of moves = 14
+	Maximum size of the priority queue = 87
+
+	Minimum number of moves = 12
+	Maximum size of the priority queue = 13
+
+	Minimum number of moves = 10
+	Maximum size of the priority queue = 44
+
+	Minimum number of moves = 9
+	Maximum size of the priority queue = 7
+
+	Minimum number of moves = 6
+	Maximum size of the priority queue = 10
+
+	Minimum number of moves = 4
+	Maximum size of the priority queue = 7
+
+	Minimum number of moves = 3
+	Maximum size of the priority queue = 6
+
+	Minimum number of moves = 2
+	Maximum size of the priority queue = 3
+
+	Minimum number of moves = 1
+	Maximum size of the priority queue = 2
+
+Manhattan
+
+	Minimum number of moves = 20
+	Maximum size of the priority queue = 36
+
+	Minimum number of moves = 18
+	Maximum size of the priority queue = 611
+
+	Minimum number of moves = 16
+	Maximum size of the priority queue = 36
+
+	Minimum number of moves = 14
+	Maximum size of the priority queue = 44
+
+	Minimum number of moves = 12
+	Maximum size of the priority queue = 13
+
+	Minimum number of moves = 10
+	Maximum size of the priority queue = 19
+
+	Minimum number of moves = 9
+	Maximum size of the priority queue = 7
+
+	Minimum number of moves = 6
+	Maximum size of the priority queue = 10
+
+	Minimum number of moves = 4
+	Maximum size of the priority queue = 7
+
+	Minimum number of moves = 3
+	Maximum size of the priority queue = 6
+
+	Minimum number of moves = 2
+	Maximum size of the priority queue = 3
+
+	Minimum number of moves = 1
+	Maximum size of the priority queue = 2
+
+Since the Hamming distance takes into consideration only the number of tiles that are out of place, so the cost value varies from 1 to 15 approximately. With such a short variance in cost, the MinPQ ends up priorizing Nodes that turn out to be useless at the end. However, this problem can only be noticed when the number of moves is 10 or more.
+The Manhattan distance in the other hand takes into consideration each tile's distance from its correct place. This makes the cost value of a Node to change a lot from one another, avoiding MinPQ to priorize useless Nodes. From 1 to 9 moves, manhattan and hamming show similar priority queue sizes. The diference is really clear once the number of moves reaches 10. 
+The Manhattan computation performs much better than the Hamming since as it gets closer to the answer, its cost becomes much smaller than the initial costs. This leads the priority queue to delete usefull Nodes with mode frequency.
+The Hamming computation performs poorly compared to the Manhattan because after 10 moves, there are too many branches in the priority queue and distant nodes end up bing raised to the top.
+To conclude, I believe the manhattan distance computation is more trustful and avoids unecessary calculations. However, for small mazes or puzzles, the hamming would perform as good as the manhattan and iw would be simpler to implement.
